@@ -1,5 +1,7 @@
 import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,14 +28,11 @@ import { IssueComponent } from './issue/issue.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule implements OnInit {
-  constructor(private router: Router){}
-  ngOnInit(): void {
-    this.router.navigate(['/home'])
-  }
+export class AppModule {
 }

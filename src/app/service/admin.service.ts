@@ -41,5 +41,19 @@ export class AdminService {
     return this.http.delete<any>(this.url1+"/api/issue/"+id)
 
   }
+  updateIssue(body:any,id:any){
+    return this.http.put<any>(this.url1+"/api/issue/"+id,body)
+  }
+
+  taskEmail(body:any){
+    return this.http.post<any>(this.url1+"/api/Taskemail/",body)
+  }
+  getEmail(id:any){
+    return this.http.get<any>(this.url1+"/api/getEmial/"+id);
+  }
+
+  issuesEmail(body:any){
+    return this.http.post<any>(this.url1+"/api/Issuemail/",body)
+  }
 
 }
