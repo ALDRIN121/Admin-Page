@@ -25,4 +25,32 @@ export class TaskComponent implements OnInit {
     })
   }
 
+  sendEmail(data:any){
+    console.log(data);
+    
+    this.service.getEmail(data.userID).subscribe((response:any)=>{
+      if(response.success == true){
+        console.log(response);
+        this.email(response.data[0]);
+        
+      }
+    })
+    // this.service.taskEmail(data,data).subscribe((response)=>{
+    //   console.log(response);
+      
+    // })
+    
+  }
+  email(response){
+    window.alert("email send successfully")
+    // let body = {
+    //   "name": response.username,
+    //   "userEmail": response.useremail
+    // }
+    // this.service.taskEmail(body).subscribe((response:any)=>{
+    //   console.log(response);
+      
+    // })
+  }
+
 }
